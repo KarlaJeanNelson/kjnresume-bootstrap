@@ -1,0 +1,119 @@
+:root {
+	--background: #C0E7D7;
+	--primary: #3D85B8;
+	--primaryactive: #316A93;
+}
+
+body {
+	background-color: var(--background);
+	font-size: .875rem;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100; /* Behind the navbar */
+	padding: 72px 0 0 0; /* Height of navbar */
+	box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+	position: relative;
+	top: 0;
+	height: calc(100vh - 72px);
+	overflow-x: hidden;
+	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+	.sidebar-sticky {
+		position: -webkit-sticky;
+		position: sticky;
+	}
+}
+
+.sidebar {
+		background-color: var(--primary);
+}
+
+.sidebar .nav-link {
+	border: solid white 2px;
+	border-radius: 0;
+	color: white;
+	font-size: 2rem;
+	margin: .5rem;
+	text-transform: uppercase;
+}
+
+.sidebar .nav-link.active {
+	/*background-color: var(--primaryactive);*/
+}
+
+/*
+ * Content
+ */
+
+[role="main"] {
+	padding-top: 72px; /* Space for fixed navbar */
+}
+
+/*
+ * Navbar
+ */
+
+.navbar {
+	height: 72px;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+/*No media query since this is the default in Bootstrap*/
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+	html {
+		font-size: .6rem;
+	}
+	
+	.sidebar .nav-link.active {
+		background-color: red;
+	}
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	html {
+		font-size: .8rem;
+	}
+	
+	.sidebar .nav-link.active {
+		background-color: orange;
+	}
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+	html {
+		font-size: 1rem;
+	}
+	
+	.sidebar .nav-link.active {
+		background-color: yellow;
+	}
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	html {
+		font-size: 1.2rem;
+	}
+	
+	.sidebar .nav-link.active {
+		background-color: green;
+	}
+}
